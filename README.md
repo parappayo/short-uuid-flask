@@ -4,6 +4,16 @@ Attention: this project is for demo purposes only and is not intended for use in
 
 I created this project to mess around with creating a tiny web service in [Flask](https://flask.palletsprojects.com/en/2.0.x/) and demonstrate generating short [base64](https://docs.python.org/3/library/base64.html) encoded [uuid](https://docs.python.org/3/library/uuid.html) ([RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122.html)) strings.
 
+## Usage
+
+Assuming you have [Python 3](https://www.python.org/) and [pipenv](https://pipenv.pypa.io/en/latest/) installed,
+
+* `pipenv install`
+* `pipenv shell`
+* `python3 -m flask run`
+
+Note that `wsgi.py` is a default entry point that Flask looks for.
+
 ## Short UUID Strings
 
 A goal of this project is to produce short strings. The core of this demo is the following one-liner:
@@ -28,3 +38,17 @@ Absolutely no security measures are provided for this demo. Some options to cons
 * [Flask app config](https://flask.palletsprojects.com/en/2.0.x/config/) provides an option to use a secret key for user session data
 * [OAuthLib](https://oauthlib.readthedocs.io/en/latest/) can be used to integrate with SSO such as Google Signin, [tutorials are online](https://realpython.com/flask-google-login/)
 * [PyJWT](https://pyjwt.readthedocs.io/en/latest/) can be used to build a service that issues ssl signed bearer tokens ([JWTs](https://jwt.io/), [RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519))
+
+## Pipenv Cheat Sheet
+
+I'm constantly forgetting how to use this thing.
+
+* Update pip: `python -m pip install --upgrade pip`
+* Is pipenv installed? `which pipenv`
+* Install pipenv: `pip install --user pipenv`
+  * If you are using git bash on Windows (lol, I know), you're path may need to be updated
+  * `vim ~/.bash_profile`
+  * add the line `export PATH=$PATH:"/c/Users/jason/AppData/Roaming/Python/Python39/Scripts"`
+  * source `~/.bash_profile`
+* Install Flask: `pipenv install flask`
+* Launch a shell: `pipenv shell`

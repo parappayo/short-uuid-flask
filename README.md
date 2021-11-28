@@ -14,6 +14,10 @@ Assuming you have [Python 3](https://www.python.org/) and [pipenv](https://pipen
 
 Note that `wsgi.py` is a default entry point that Flask looks for.
 
+## But Does it Make Sense?
+
+Not really. Rather than deploying a web service just to generate uuids, you're typically better off just having services locally generate their own as needed. I would expect the perf and maintenance cost of having a dedicated uuid generating service to be much highter than the cost of each service that needs to generate uuids figuring out how to do it.
+
 ## Short UUID Strings
 
 A goal of this project is to produce short strings. The core of this demo is the following one-liner:
